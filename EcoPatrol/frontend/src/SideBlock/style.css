@@ -1,0 +1,11 @@
+.sideBlock{
+    overflow-y: scroll;
+    padding: 20px 0;
+    color: #fff;
+    text-align: center;
+    background: rgba(16, 16, 23, 0.67);
+    /* position: fixed; */
+    left:0;
+    min-width: 200px;
+    min-height: 100%;
+}
