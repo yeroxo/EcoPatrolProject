@@ -14,7 +14,7 @@ export default class MyMap extends React.Component{
         return (
             <YMaps>
                 <div className='myMap'>
-                    <Map defaultState={{ center: [55.4, 61.7], zoom: 8 }} height = "91vh" width='100%'/>
+                    <Map defaultState={{ center: [55.4, 61.7], zoom: 8 }} height = "91vh" width='90vw'/>
                 </div>
             </YMaps>
         )
@@ -26,7 +26,7 @@ export default class MyMap extends React.Component{
         hintContent: '<div class="map__hint">ул. Литераторов, д. 19</div>',
         balloonContent: [
             '<div class="map__balloon">',
-            //    '<img class="map__burger-img" src="img/flower.png" alt="цветочек"/>',
+            '<img class="map__img src="https://lh3.ggpht.com/KV-KPdiqPUxbHuNkba5T5XR9JfH673Hv9Gk6Lb42o8GQ4sPyneCszPl8Uw8rZUWrbl4"/>',
             ':3 1',
             '</div>'
         ]
