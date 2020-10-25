@@ -11,9 +11,9 @@ export default class ModalButton extends React.Component {
     render() {
         return (
             <div>
-                <button onClick={() => this.openModal()}>{this.props.title}</button>
+                <button className='ModalButton' onClick={() => this.openModal()}>{this.props.title}</button>
                 <ModalInstruction isOpen={this.state.isModalOpen} onClose={() => this.closeModal()}>
-                    <h3>Как пользоваться картой</h3>
+                    <h2>Как пользоваться картой</h2>
                     <p>Здесь будет инструкция</p>
                 </ModalInstruction>
             </div>

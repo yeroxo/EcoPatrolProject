@@ -1,0 +1,15 @@
+.Station__block{
+    padding-top: 20px;
+    width: 70%;
+    min-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.Station__img{
+    object-fit: cover;
+    width: 100%;
+    height: 500px;
+}
