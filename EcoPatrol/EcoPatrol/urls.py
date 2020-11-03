@@ -15,7 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from mainapp import views
+from django.urls import re_path
+"""
+нужен для составления регулярок в адресе r'^name' - все начинается с name  
+"""
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('',views.index,name='home'),
+    path('admin/', admin.site.urls)
 ]
