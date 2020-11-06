@@ -12,7 +12,7 @@ function App() {
       <Header/>
       <Switch>
         <Route path={'/'} exact component = {MapPage} />
-          <Route path={'/station'} component={StationPage} />
+        <Route path={'/station'} component={StationPage} />
       </Switch>
     </div>
     </BrowserRouter>

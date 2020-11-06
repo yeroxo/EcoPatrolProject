@@ -5,7 +5,7 @@
     z-index: 1; /* Stay on top */
     left: 0;
     /* background: rgba(16, 16, 23, 0.67); */
-    background: linear-gradient(180deg, #59A578, #BCCF00);
+    background: linear-gradient(180deg, #282C62, rgb(183,187,208));
     color: #fff;
     text-align: center;
     overflow-x: hidden; /* Disable horizontal scroll */
