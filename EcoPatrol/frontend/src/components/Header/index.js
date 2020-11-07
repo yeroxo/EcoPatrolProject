@@ -8,14 +8,13 @@ export default class Header extends React.Component {
         return (
             <header>
                 <div className='header__content'>
-                    <a href='https://yandex.ru/'>
+                    <a href='/'>
                         <img className='logo-image'src='./images/logo.png'></img>
                     Лого</a>
                     <a href='https://yandex.ru/'>О проекте</a>
-                    <ModalButton title='Как пользоваться картой'></ModalButton>
-                    <a href='https://yandex.ru/'>Контакты</a>
-                </div>
-                
+                    <ModalButton title='Как пользоваться картой' content = {<h2>Как пользоваться картой</h2>}/>
+                    <ModalButton title='Контакты' content={<h2>Контакты</h2>}/>
+                </div>              
             </header>
         )
     }

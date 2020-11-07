@@ -1,13 +1,16 @@
 .sideBlock{
     height: 100%; /* Full-height: remove this if you want "auto" height */
-    width: 300px; /* Set the width of the sidebar */
+    width: 300px;
     position: fixed; 
     z-index: 1; /* Stay on top */
     left: 0;
-    /* background: rgba(16, 16, 23, 0.67); */
-    background: linear-gradient(180deg, #282C62, rgb(183,187,208));
+    background: linear-gradient(180deg, #282C62, rgb(183,187,208, 0.1));
     color: #fff;
     text-align: center;
     overflow-x: hidden; /* Disable horizontal scroll */
     padding-top: 20px;
+}
+
+.div__niceScroll{
+    margin: 140px;
 }

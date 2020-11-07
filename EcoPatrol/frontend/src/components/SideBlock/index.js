@@ -9,11 +9,12 @@ export default class SideBlock extends React.Component {
             <div className='sideBlock'>
                 <h1>Список экостанций</h1>
                 <StationLink name = 'Название станции'
-                image={'https://lh3.ggpht.com/KV-KPdiqPUxbHuNkba5T5XR9JfH673Hv9Gk6Lb42o8GQ4sPyneCszPl8Uw8rZUWrbl4'} />
+                    image={'https://f24-a.akamaihd.net/sites/default/files/f24/catalog/20181111/f709b20fd47940ecb7e89b2caac59c1f.jpg'} />
                 <StationLink name='Название станции'
-                    image={'https://lh3.ggpht.com/KV-KPdiqPUxbHuNkba5T5XR9JfH673Hv9Gk6Lb42o8GQ4sPyneCszPl8Uw8rZUWrbl4'} />
+                    image={'https://f24-a.akamaihd.net/sites/default/files/f24/catalog/20181111/f709b20fd47940ecb7e89b2caac59c1f.jpg'} />
                 <StationLink name='Название станции'
-                    image={'https://lh3.ggpht.com/KV-KPdiqPUxbHuNkba5T5XR9JfH673Hv9Gk6Lb42o8GQ4sPyneCszPl8Uw8rZUWrbl4'} />   
+                    image={'https://f24-a.akamaihd.net/sites/default/files/f24/catalog/20181111/f709b20fd47940ecb7e89b2caac59c1f.jpg'} />    
+                <div className='div__niceScroll'></div>    
             </div>
         )
     }

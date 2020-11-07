@@ -1,16 +1,17 @@
 import React from 'react'
 import './style.css'
 import placemarks from '../placemarks.json'
-import { YMaps, Map, Placemark, ObjectManager} from 'react-yandex-maps';
+import { YMaps, Map, ObjectManager} from 'react-yandex-maps';
 
 export default class MyMap extends React.Component{
     render(){
         return (
+            <div className='map'>
             <YMaps>
                 <Map
                     defaultState={{
                         center: [55.4, 61.7],
-                         zoom: 8 
+                         zoom: 9 
                     }}
                     height="91vh"
                     width='90vw'
@@ -35,6 +36,7 @@ export default class MyMap extends React.Component{
                     />
                 </Map>
             </YMaps>
+            </div>
         )
     }
 }

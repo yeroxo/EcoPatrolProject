@@ -1,7 +1,5 @@
-.myMap{
+.map{
     position: fixed;
     right: 0;
-    margin-left: 300px;
-    /* width: 85vw; */
-    height: 100%;
+    left: 300px;
 }
