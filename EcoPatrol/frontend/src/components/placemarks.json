@@ -19,6 +19,15 @@
                 61.8
             ]
         }
+    },{
+        "type": "Feature",
+        "geometry": {
+            "type": "Point",
+            "coordinates": [
+                55.6,
+                61.8
+            ]
+        }
     }
 ],
     "properties": {
