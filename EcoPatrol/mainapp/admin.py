@@ -1,3 +1,10 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import Project, Location, Contact
+from .forms import ProjectForm
+
+
+@admin.register(Project)
+class ProjectAdmin(admin.ModelAdmin):
+    form = ProjectForm
+
