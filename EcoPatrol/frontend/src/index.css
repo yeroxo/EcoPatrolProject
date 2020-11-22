@@ -1,0 +1,14 @@
+@font-face {
+  font-family: 'Montserrat-ExtraBoldItalic';
+  src: local('Montserrat-ExtraBoldItalic'), url(./fonts/Montserrat-ExtraBoldItalic.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Manrope-Bold';
+  src: local('Manrope-Bold'), url(./fonts/Manrope-Bold.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Manrope-Medium';
+  src: local('Manrope-Medium'), url(./fonts/Manrope-Medium.ttf) format('truetype');
+}

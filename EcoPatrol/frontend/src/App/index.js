@@ -1,21 +1,21 @@
 import React from 'react';
-import Map from '../Map';
-import SideBlock from '../SideBlock'
-import Header from '../Header'
-import Footer from '../Footer'
-
+import {BrowserRouter, Switch, Route} from 'react-router-dom'
+import {MapPage} from '../pages/MapPage'
+import {StationPage} from '../pages/StationPage'
+import Header from '../components/Header'
 import './style.css'
 
 function App() {
   return (
+    <BrowserRouter>
     <div className="App">
       <Header/>
-      <div className="mapContent">
-        <SideBlock />
-        <Map/>
-      </div>   
-      {/* <Footer/>     */}
+      <Switch>
+        <Route path={'/'} exact component = {MapPage} />
+        <Route path={'/station'} component={StationPage} />
+      </Switch>
     </div>
+    </BrowserRouter>
   );
 }
 

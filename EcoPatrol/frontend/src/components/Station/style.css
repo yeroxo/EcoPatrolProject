@@ -1,0 +1,17 @@
+.Station__block{
+    padding: 20px;
+    width: 70%;
+    min-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgb(255,255,255,0.3);
+    color:#282C62;
+}
+
+.Station__img{
+    object-fit: cover;
+    width: 100%;
+    height: 500px;
+}
