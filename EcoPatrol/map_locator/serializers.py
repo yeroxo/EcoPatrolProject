@@ -17,8 +17,8 @@ class LocationSerializer(serializers.ModelSerializer):
 
 class ProjectSerializer(serializers.ModelSerializer):
     location = LocationSerializer(many=False, read_only=True)
-    contact = ContactSerializer(many=True, read_only=True)
+    contacts = ContactSerializer(many=True, read_only=True)
 
     class Meta:
         model = Project
-        fields = ('name', 'description', 'location', 'text_location', 'picture', 'contact')
+        fields = ('id', 'name', 'description', 'location', 'text_location', 'picture', 'contacts')

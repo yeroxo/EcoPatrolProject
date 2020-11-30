@@ -8,6 +8,9 @@ class Location(models.Model):
     x = models.FloatField(null=True)
     y = models.FloatField(null=True)
 
+    def __str__(self):
+        return f'x:{self.x},y:{self.y}'
+
 
 class Project(models.Model):
     name = models.CharField(max_length=32)
@@ -26,7 +29,7 @@ class Contact(models.Model):
         ('E', 'Email'),
         ('TG', 'Telegram'),
     )
-    project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name='ProjectContacts')
+    project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name='contacts')
     name = models.CharField(max_length=2, choices=CONTACT_TYPE)
     method = models.CharField(max_length=254)
 
