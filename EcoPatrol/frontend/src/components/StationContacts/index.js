@@ -1,15 +1,30 @@
 import React from 'react'
 import './style.css'
 
-function StationContacts(props) {
-    return (
-        <table className='Contacts__table'>
-            <tr><td>ячейка тела таблицы</td><td>ячейка тела таблицы</td></tr>
-            <tr><td>ячейка тела таблицы</td><td>ячейка тела таблицы</td></tr>
-            <tr><td>ячейка тела таблицы</td><td>ячейка тела таблицы</td></tr>
-            <tr><td>ячейка тела таблицы</td><td>ячейка тела таблицы</td></tr>
-        </table>
-    )
-}
+export default class StationContacts extends React.Component{
 
-export default StationContacts
+    
+    render(){
+        const {contacts} = this.props;
+    return (
+        <div className="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Описание</th>
+                        <th>Контакт</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {contacts.map(contact => (
+                        <tr>
+                            <td data-label="Описание">{contact.name}</td>
+                            <td data-label="Контакт">{contact.method}</td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
+        </div>
+    )
+                    }
+}

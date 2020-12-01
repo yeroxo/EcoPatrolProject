@@ -1,7 +1,7 @@
 import React from 'react';
 import {BrowserRouter, Switch, Route} from 'react-router-dom'
-import {MapPage} from '../pages/MapPage'
-import {StationPage} from '../pages/StationPage'
+import MapPage from '../pages/MapPage'
+import StationPage from '../pages/StationPage'
 import Header from '../components/Header'
 import './style.css'
 
@@ -12,7 +12,7 @@ function App() {
       <Header/>
       <Switch>
         <Route path={'/'} exact component = {MapPage} />
-        <Route path={'/station'} component={StationPage} />
+          <Route path={'/station/:id'} component={StationPage} />
       </Switch>
     </div>
     </BrowserRouter>
