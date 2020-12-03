@@ -1,4 +1,4 @@
-.sideBlock{
+#sideBlock{
     height: 100%; /* Full-height: remove this if you want "auto" height */
     width: 300px;
     position: fixed; 
@@ -11,6 +11,29 @@
     padding-top: 20px;
 }
 
+.sideBlock__ul{
+   padding:0;
+}
+
 .div__niceScroll{
     margin: 140px;
+}
+
+@media (max-width: 800px) {
+    #sideBlock{
+    height: 100%; /* Full-height: remove this if you want "auto" height */
+    width: 150px;
+    position: fixed; 
+    z-index: 1; /* Stay on top */
+    left: 0;
+    background: linear-gradient(180deg, #282C62, rgb(183,187,208, 0.1));
+    color: #fff;
+    text-align: center;
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 10px;
+}
+
+.div__niceScroll{
+    margin: 140px;
+}
 }

@@ -20,3 +20,33 @@
 p{
     color:#282C62;
 }
+
+@media (max-width: 800px) {
+    .StationLink__block{
+    margin: 5px 5px 15px;
+    min-width: 140px;
+    min-height: 20px;
+    width: 140px;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    background-color: #fff;
+}
+
+.nav-link__image{
+    width: 120px;
+    height: 90px;
+    min-width: 80px;
+    min-height: 80px;
+}
+
+p{
+    color:#282C62;
+    margin: 3px;
+}
+
+h1{
+    margin:10px;
+    font-size: 20px;
+}
+}

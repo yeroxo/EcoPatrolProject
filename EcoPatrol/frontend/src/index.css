@@ -12,3 +12,13 @@
   font-family: 'Manrope-Medium';
   src: local('Manrope-Medium'), url(./fonts/Manrope-Medium.ttf) format('truetype');
 }
+
+body, html {
+    margin:0;
+    padding:0;
+    outline:none;
+    background: rgb(183,187,208,0.5);
+    min-width:100vw;
+    min-height: 100%;
+    height: auto;
+}
