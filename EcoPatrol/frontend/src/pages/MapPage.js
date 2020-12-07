@@ -29,14 +29,16 @@ export default class MapPage extends React.Component {
             <div className="mapContent">
                 <SideBlock stations={stations}/>
                 <Map updateData={this.updateData} stations={
-                        stations.map(station => [station.location.x, station.location.y])
+                        stations.map(station => 
+                            // [station.location.x, station.location.y]
+                            station
+                            )
                 }/>
             </div> 
         </Fragment>
         )
     }
     async componentDidMount() {
-        alert(this.state.tlx);
         const url = "http://127.0.0.1:8000/api/projects/";
         // const url = http://127.0.0.1:8000/api/projects/?TLX=54.5635&TLY=60.1334&BRX=55.6515&BRY=63.9891
         await fetch(url)

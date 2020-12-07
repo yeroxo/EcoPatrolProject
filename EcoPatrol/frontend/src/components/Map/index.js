@@ -1,6 +1,6 @@
 import React from 'react'
 import './style.css'
-import { YMaps, Map, ObjectManager, Placemark} from 'react-yandex-maps';
+import { YMaps, Map, Placemark} from 'react-yandex-maps';
 
 export default class MyMap extends React.Component {
 
@@ -14,13 +14,12 @@ export default class MyMap extends React.Component {
         }
     }
 
-    // objectManager = React.createRef();
     map = React.createRef();
     ymaps = React.createRef();
 
     getVisibleObjects = () => {
         if (this.ymaps.current) {
-            this.state={
+            this.setState={
                 tlx: this.map.current.getBounds()[0][0],
                 tly: this.map.current.getBounds()[0][1],
                 brx: this.map.current.getBounds()[1][0],
@@ -49,26 +48,14 @@ export default class MyMap extends React.Component {
                         height="91vh"
                         width='90vw'
                     >
-                        {stations.map(coordinate => <Placemark geometry={coordinate} />)}
-                        {/* <ObjectManager
-                            instanceRef={this.objectManager}
-                            options={{
-                                clusterize: true,
-                                gridSize: 32,
-                            }}
-                            objects={{
-                                openBalloonOnClick: true,
-                                preset: 'islands#greenDotIcon',
-                            }}
-                            clusters={{
-                                preset: 'islands#redClusterIcons',
-                            }}
-                            features= {stations}
-                            modules={[
-                                'objectManager.addon.objectsBalloon',
-                                'objectManager.addon.objectsHint',
-                            ]}
-                        /> */}
+                        {stations.map(station => 
+                        <Placemark geometry={[station.location.x, station.location.y]} 
+                                properties= {{
+                                                hintContent: station.name,
+                                                balloonContent: station.name
+                                              }}
+                                modules= {['geoObject.addon.balloon', 'geoObject.addon.hint']}
+                                />)}
                     </Map>
                 </YMaps>
             </div>
