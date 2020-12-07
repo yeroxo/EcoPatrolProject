@@ -3,10 +3,32 @@ import './style.css'
 import { YMaps, Map, ObjectManager, Placemark} from 'react-yandex-maps';
 
 export default class MyMap extends React.Component {
-    objectManager = React.createRef();
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            tlx: null,
+            tly: null,
+            brx: null,
+            bry: null
+        }
+    }
+
+    // objectManager = React.createRef();
     map = React.createRef();
     ymaps = React.createRef();
 
+    getVisibleObjects = () => {
+        if (this.ymaps.current) {
+            this.state={
+                tlx: this.map.current.getBounds()[0][0],
+                tly: this.map.current.getBounds()[0][1],
+                brx: this.map.current.getBounds()[1][0],
+                bry: this.map.current.getBounds()[1][1]
+            }
+            this.props.updateData(this.state.tlx, this.state.tly, this.state.brx, this.state.bry);       
+        }
+    };
 
     render() {
         const { stations } = this.props;
@@ -28,7 +50,6 @@ export default class MyMap extends React.Component {
                         width='90vw'
                     >
                         {stations.map(coordinate => <Placemark geometry={coordinate} />)}
-
                         {/* <ObjectManager
                             instanceRef={this.objectManager}
                             options={{

@@ -20,11 +20,13 @@ a{
 }
 
 .logo-image{
-    width: 40px;
+    width: 100px;
     height: 40px;
+    /* background-image: url(big-logo.png) no-repeat; */
+    /* background-color: white; */
 }
 
-@media (max-width: 800px) {
+@media screen and (max-width: 800px) {
     header{
     background: #282C62;
     width: 100%;

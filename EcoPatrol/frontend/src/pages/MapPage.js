@@ -6,8 +6,21 @@ export default class MapPage extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            stations: []
+            stations: [],
+            tlx: null,
+            tly: null,
+            brx: null,
+            bry: null
         }
+        this.updateData = this.updateData.bind(this);
+    }
+    updateData = (valTLX, valTLY, valBRX, valBRY) => {
+        this.setState({ 
+            tlx: valTLX,
+            tly: valTLY,
+            brx: valBRX,
+            bry: valBRY
+        });
     }
     render() {
         const {stations} = this.state;
@@ -15,7 +28,7 @@ export default class MapPage extends React.Component {
         <Fragment>
             <div className="mapContent">
                 <SideBlock stations={stations}/>
-                <Map stations={
+                <Map updateData={this.updateData} stations={
                         stations.map(station => [station.location.x, station.location.y])
                 }/>
             </div> 
@@ -23,8 +36,9 @@ export default class MapPage extends React.Component {
         )
     }
     async componentDidMount() {
-
+        alert(this.state.tlx);
         const url = "http://127.0.0.1:8000/api/projects/";
+        // const url = http://127.0.0.1:8000/api/projects/?TLX=54.5635&TLY=60.1334&BRX=55.6515&BRY=63.9891
         await fetch(url)
             .then(response => response.json())
             .then((myJson) => {
