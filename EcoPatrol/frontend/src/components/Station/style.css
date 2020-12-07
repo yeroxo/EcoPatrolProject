@@ -1,18 +1,18 @@
 .Station__block{
-    padding: 20px;
+    padding: 2vw;
     width: 70%;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     background-color: rgb(255,255,255,0.3);
+    min-height: 95vh;
     color:#282C62;
 }
 
 .Station__img{
     object-fit: cover;
     width: 100%;
-    height: 20vw;
+    height: 25vh;
 }
 
 #return__btn{
@@ -22,4 +22,17 @@
     min-width: 180px;
     min-height: 50px;
     margin-top: 20px;
+}
+
+@media (max-width: 600px) {
+.Station__block{
+    padding: 2vw;
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(255,255,255,0.3);
+    min-height: 95vh;
+    color:#282C62;
+}
 }

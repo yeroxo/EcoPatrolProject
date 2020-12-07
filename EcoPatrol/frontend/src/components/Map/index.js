@@ -45,7 +45,7 @@ export default class MyMap extends React.Component {
                             center: [55.4, 61.7],
                             zoom: 9
                         }}
-                        height="91vh"
+                        height="95vh"
                         width='90vw'
                     >
                         {stations.map(station => 
