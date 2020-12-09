@@ -8,3 +8,16 @@
      border: none;
      cursor: pointer;
 }
+
+@media (max-width: 800px) {
+     .ModalButton{
+     font-size: 10px;
+     color: #fff;
+     font-family: Montserrat-ExtraBoldItalic;
+     background: none;
+     padding: 0;
+     outline: none;
+     border: none;
+     cursor: pointer;
+}
+}

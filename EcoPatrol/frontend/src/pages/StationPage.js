@@ -1,17 +1,38 @@
-import React, {Fragment} from 'react'
+import React from 'react'
 import Station from '../components/Station'
-import Footer from '../components/Footer'
 
-export const StationPage = (props) => {
+export default class StationPage extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            name: null,
+            description: null,
+            picture: null,
+            text_location: null,
+            contacts: []
+        };
+    }
+    render(){
+        const { name, description, picture, text_location, contacts } = this.state;
     return (
         <div>
-        <Station 
-            image= 'http://tvolk.ru/upload/iblock/e70/e70b431fe9e001196470ffa78581bc33.jpg'
-            name='Пример экостанции'
-            about='Здесь будет описание экостанции. Расскажите о том, чем вы занимаетесь. Так вы заитересуете больше людей. Здесь будет описание экостанции. Расскажите о том, чем вы занимаетесь. Так вы заитересуете больше людей. Здесь будет описание экостанции. Расскажите о том, чем вы занимаетесь. Так вы заитересуете больше людей. Здесь будет описание экостанции. Расскажите о том, чем вы занимаетесь. Так вы заитересуете больше людей. Здесь будет описание экостанции. Расскажите о том, чем вы занимаетесь. Так вы заитересуете больше людей. Здесь будет описание экостанции. Расскажите о том, чем вы занимаетесь. Так вы заитересуете больше людей. Здесь будет описание экостанции. Расскажите о том, чем вы занимаетесь. Так вы заитересуете больше людей.'
-            location='Расскажите, где находится ваша экостанция. Возможно, это средняя общеобразовательная школа. Расскажите, где находится ваша экостанция. Возможно, это средняя общеобразовательная школа. Расскажите, где находится ваша экостанция. Возможно, это средняя общеобразовательная школа. Расскажите, где находится ваша экостанция. Возможно, это средняя общеобразовательная школа.'
-        />
-        <Footer/>
+            <Station name={name} description={description} picture={picture} text_location={text_location} contacts={contacts}/>
         </div>
      )
+    }
+
+    async componentDidMount() {
+        const id = this.props.match.params.id;
+        await fetch(`http://127.0.0.1:8000/api/projects/${id}/`)
+            .then(response =>response.json())
+            .then((myJson) => {
+                this.setState({ name: myJson.name, 
+                    description: myJson.description,
+                    text_location: myJson.text_location,
+                    contacts: myJson.contacts,
+                    picture: myJson.picture
+                });
+            })
+            .catch(error => alert(error)); 
+    }
 }
