@@ -7,7 +7,7 @@ export default class SideBlock extends React.Component {
         const {stations}=this.props;
         return (
             <div id='sideBlock'>
-                <h1>Список экостанций</h1>
+                <h1 id='sideBlock__h1'>Список экостанций</h1>
                 <ul className='sideBlock__ul'>
                     {stations.map(item => (
                         <StationLink id={item.id} name = {item.name} picture = {item.picture}/>                 
