@@ -1,6 +1,7 @@
-from django.contrib import admin
+from django.contrib.gis import admin
+from django.contrib.gis.db import models
 
-from .models import Project, Location, Contact
+from .models import Project, Contact
 
 
 class ContactsInLine(admin.StackedInline):
@@ -10,14 +11,8 @@ class ContactsInLine(admin.StackedInline):
     extra = 0
 
 
-@admin.register(Location)
-class LocationAdmin(admin.ModelAdmin):
-    fields = ('x', 'y')
-
-
 @admin.register(Project)
 class ProjectAdmin(admin.ModelAdmin):
     inlines = [ContactsInLine]
-    field = LocationAdmin
     list_filter = ['id']
     search_fields = ['name']

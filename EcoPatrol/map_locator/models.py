@@ -1,22 +1,15 @@
-from django.db import models
+from django.contrib.gis.db import models
 
 
 # Create your models here.
 
 
-class Location(models.Model):
-    x = models.FloatField(null=True)
-    y = models.FloatField(null=True)
-
-    def __str__(self):
-        return f'x:{self.x},y:{self.y}'
-
-
 class Project(models.Model):
-    name = models.CharField(max_length=32)
-    description = models.TextField()
-    location = models.ForeignKey(Location, on_delete=models.CASCADE)
-    text_location = models.TextField()
+    name = models.CharField('Название проекта', max_length=32)
+    description = models.TextField('Описание проекта')
+    longitude = models.FloatField('Широта', null=True, blank=True)
+    latitude = models.FloatField('Долгота', null=True, blank=True)
+    text_location = models.TextField('Описание местоположения')
     picture = models.ImageField(upload_to='photos', max_length=1024)
 
     def __str__(self):

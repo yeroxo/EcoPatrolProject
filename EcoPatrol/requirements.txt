@@ -3,7 +3,8 @@ djangorestframework==3.12.1
 asgiref==3.2.10
 pytz==2020.1
 sqlparse==0.4.1
-drf_extensions
+drf-extensions
 drf-spectacular
-Pillow==8.0.1
-django_filters
+pillow==8.0.1
+psycopg2-binary
+django-filters
