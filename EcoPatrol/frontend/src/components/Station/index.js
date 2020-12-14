@@ -6,7 +6,7 @@ import StationContacts from '../StationContacts'
 
 class Station extends React.Component{   
     render(){
-       const { name, description, picture, text_location, contacts } = this.props;
+        const { name, description, picture, text_location, contacts } = this.props;
         return (
             <div className='Station__block'>
                 <img className='Station__img' src={picture} alt='Фото эко-станции'></img>

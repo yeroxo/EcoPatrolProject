@@ -15,9 +15,9 @@ export default class StationPage extends React.Component {
     render(){
         const { name, description, picture, text_location, contacts } = this.state;
     return (
-        <div>
+        // <div>
             <Station name={name} description={description} picture={picture} text_location={text_location} contacts={contacts}/>
-        </div>
+        // </div>
      )
     }
 
