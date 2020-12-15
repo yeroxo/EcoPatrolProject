@@ -20,12 +20,27 @@ services:
       - 5432:5432
     expose:
       - 5432
-  web:
+  api:
     build: .
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
       - .:/code
     ports:
       - "8000:8000"
+    expose:
+      - 8000
     depends_on:
       - db
+
+  web:
+    build: ./frontend
+    stdin_open: true
+    command: [ "npm" ,"start" ]
+    volumes:
+      - ./frontend:/api_locator/frontend
+      - node-modules:/api_locator/frontend/node_modules
+    ports:
+      - "3000:3000"
+
+volumes:
+  node-modules:
