@@ -1,6 +1,6 @@
 import React from 'react'
 import './style.css'
-import { YMaps, Map, Placemark} from 'react-yandex-maps';
+import { YMaps, Map, Placemark, Clusterer} from 'react-yandex-maps';
 
 export default class MyMap extends React.Component {
 
@@ -10,7 +10,7 @@ export default class MyMap extends React.Component {
             tlx: null,
             tly: null,
             brx: null,
-            bry: null
+            bry: null,
         }
     }
 
@@ -25,7 +25,10 @@ export default class MyMap extends React.Component {
                 brx: this.map.current.getBounds()[1][0],
                 bry: this.map.current.getBounds()[1][1]
             }
-            this.props.updateData(this.state.tlx, this.state.tly, this.state.brx, this.state.bry);       
+            this.props.updateData(this.map.current.getBounds()[0][0], 
+            this.map.current.getBounds()[0][1], 
+                this.map.current.getBounds()[1][0], 
+                this.map.current.getBounds()[1][1]);      
         }
     };
 
@@ -33,29 +36,37 @@ export default class MyMap extends React.Component {
         const { stations } = this.props;
         return (
             <div id='map'>
-                <YMaps>
-                    <Map
+                <YMaps>               
+                    <Map 
                         instanceRef={this.map}
                         onBoundsChange={this.getVisibleObjects}
                         onLoad={ymapsInstance => {
                             this.ymaps.current = ymapsInstance;
                         }}
-                        modules={["util.bounds"]}
+                        modules={["util.bounds", "templateLayoutFactory", "layout.Image"]}
                         defaultState={{
                             center: [55.4, 61.7],
                             zoom: 9
                         }}
-                        height="95vh"
-                        width='90vw'
+                        height="93vh"
+                        width='80vw'
                     >
+                     <Clusterer>
                         {stations.map(station => 
-                        <Placemark geometry={[station.location.x, station.location.y]} 
+                        <Placemark geometry={[station.longitude, station.latitude]} 
                                 properties= {{
                                                 hintContent: station.name,
                                                 balloonContent: station.name
                                               }}
                                 modules= {['geoObject.addon.balloon', 'geoObject.addon.hint']}
+                                options={{
+                                    iconLayout: 'default#image',
+                                    // iconImageHref: '../images/logo.png',
+                                    iconContentSize: [100,100],
+                                    iconContentOffset: [-10,-10],
+                                }}
                                 />)}
+                        </Clusterer>
                     </Map>
                 </YMaps>
             </div>

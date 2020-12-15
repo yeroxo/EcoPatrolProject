@@ -1,8 +1,10 @@
 h1,h2,a{
     font-family: Montserrat-ExtraBoldItalic;
+      margin: 0;
 }
 
 p{
     font-family: Manrope-Medium;
+    margin: 0;
 }
 
