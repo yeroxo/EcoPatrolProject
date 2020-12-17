@@ -5,7 +5,7 @@ import StationLink from '../StationLink'
 export default class SideBlock extends React.Component {
 
     add_stations(stations){
-        if(stations.length==0){
+        if(stations.length===0){
             alert("zero")
             stations.map(item=>(<h3>В данной области нет экостанций</h3>))
         }
@@ -19,7 +19,7 @@ export default class SideBlock extends React.Component {
 
     render(){
         const {stations}=this.props;
-        if(stations.length==0 || stations[0].name==null){
+        if(stations.length===0 || stations[0].name==null){
             return (
                 <div id='sideBlock'>
                     <ul className='sideBlock__ul'>

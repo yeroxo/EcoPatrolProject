@@ -37,7 +37,7 @@ export default class MapPage extends React.Component {
         )
     }
     async componentDidMount() {
-        const url = `http://127.0.0.1:8000/api/location/?x1=${this.state.tlx}&y1=${this.state.tly}&x2=${this.state.brx}&y2=${this.state.bry}`;
+        const url = `http://0.0.0.0/api/location/?x1=${this.state.tlx}&y1=${this.state.tly}&x2=${this.state.brx}&y2=${this.state.bry}`;
         await fetch(url)
             .then(response => response.json())
             .then((myJson) => {
