@@ -11,20 +11,22 @@ export default class StationContacts extends React.Component{
             <table>
                 <thead>
                     <tr>
-                        <th>Описание</th>
-                        <th>Контакт</th>
+                        <th><p>Описание</p></th>
+                        {/* <th><p>Описание</p></th> */}
+                        <th><p>Контакт</p></th>
                     </tr>
                 </thead>
                 <tbody>
                     {contacts.map(contact => (
                         <tr>
-                            <td data-label="Описание">{contact.name}</td>
-                            <td data-label="Контакт">{contact.method}</td>
+                            <td data-label="Описание"><p>{contact.name}</p></td>
+                            {/* <td data-label="Описание"><p>{contact.name}</p></td> */}
+                            <td data-label="Контакт"><p>{contact.method}</p></td>
                         </tr>
                     ))}
                 </tbody>
             </table>
         </div>
     )
-                    }
+ }
 }

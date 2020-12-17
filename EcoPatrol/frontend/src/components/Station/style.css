@@ -6,12 +6,11 @@
     flex-direction: column;
     background-color: rgb(255,255,255,0.3);
     min-height: 93vh;
-    color:#282C62;
+    color:#312862;
 }
 
 .Station__img{
     object-fit: cover;
-    /* width: 100%; */
     max-height: 80vh;
 }
 
@@ -25,12 +24,16 @@
 }
 
 #return__btn{
-    font-family: Manrope-Medium;
     background-color:#F9BA51;
     border: 1px solid #282C62;
     min-width: 180px;
     min-height: 50px;
     margin-top: 20px;
+}
+
+#return__btn__p{
+    font-family: Manrope-Medium;
+    color:  #282C62;
 }
 
 @media (max-width: 1024px) {
@@ -42,7 +45,7 @@
     flex-direction: column;
     background-color: rgb(255,255,255,0.3);
     min-height: 95vh;
-    color:#282C62;
+    color:#44357e;
 }
 .station__h2{
     margin-top: 1.5vh;

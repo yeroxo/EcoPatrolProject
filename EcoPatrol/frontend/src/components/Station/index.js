@@ -17,7 +17,7 @@ class Station extends React.Component{
                 <p>{text_location}</p>
                 <h2 className='station__h2'>Как с нами связаться</h2>
                 <StationContacts contacts={contacts}/>
-                <a href='/'><button type='button' id='return__btn'><p>Вернуться на карту</p></button></a>
+                <a href='/'><button type='button' id='return__btn'><p id="return__btn__p">Вернуться на карту</p></button></a>
             </div>
         )
     }
