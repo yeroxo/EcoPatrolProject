@@ -25,4 +25,4 @@ export default class SideBlock extends React.Component {
             </div>
         )
     }
-    }
+}
