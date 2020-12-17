@@ -4,19 +4,6 @@ import StationLink from '../StationLink'
 
 export default class SideBlock extends React.Component {
 
-    add_stations(stations){
-        if(stations.length==0){
-            alert("zero")
-            stations.map(item=>(<h3>В данной области нет экостанций</h3>))
-        }
-        else{
-            alert("ok")
-            stations.map(item => (
-                    <StationLink id={item.id} name={item.name} picture={item.picture} />
-                ))
-        }
-    }
-
     render(){
         const {stations}=this.props;
         if (stations == null || stations.length==0 || stations[0].name==null){
