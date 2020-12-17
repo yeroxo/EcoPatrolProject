@@ -18,6 +18,8 @@ class Project(models.Model):
 
 class Contact(models.Model):
     CONTACT_TYPE = (
+        ('N', 'Organisator fullname'),
+        ('ON', 'Organization Name'),
         ('P', 'Phone'),
         ('E', 'Email'),
         ('TG', 'Telegram'),

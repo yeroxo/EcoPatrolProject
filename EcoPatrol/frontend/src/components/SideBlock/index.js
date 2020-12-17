@@ -3,7 +3,6 @@ import './style.css'
 import StationLink from '../StationLink'
 
 export default class SideBlock extends React.Component {
-
     render(){
         const {stations}=this.props;
         if (stations == null || stations.length==0 || stations[0].name==null){
@@ -25,4 +24,4 @@ export default class SideBlock extends React.Component {
             </div>
         )
     }
-    }
+}
