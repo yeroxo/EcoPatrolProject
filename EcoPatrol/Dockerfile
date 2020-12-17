@@ -20,3 +20,12 @@ RUN apk update && apk add postgresql-dev gcc python3-dev musl-dev
 COPY requirements.txt $APP_DIR/
 RUN pip install -r requirements.txt
 COPY . $APP_DIR/
+
+
+#FROM node:alpine
+#ARG FRONT_DIR=/frontend_view
+#WORKDIR "$FRONT_DIR"
+#
+#COPY package.json "$FRONT_DIR"
+#RUN npm install
+#COPY frontend "$FRONT_DIR"
