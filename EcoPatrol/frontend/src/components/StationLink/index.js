@@ -9,7 +9,7 @@ export default class StationLink extends React.Component{
         <div className = 'StationLink__block'>
             <NavLink className='nav-link' to={'/station/'+ id}>
                 <img className='nav-link__image' src={picture} alt='Фото эко-станции'></img>
-                <p>{name}</p>
+                <p id='StationLink__p'>{name}</p>
             </NavLink>
         </div>       
     )

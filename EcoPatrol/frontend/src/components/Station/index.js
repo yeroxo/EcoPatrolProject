@@ -10,14 +10,14 @@ class Station extends React.Component{
         return (
             <div className='Station__block'>
                 <img className='Station__img' src={picture} alt='Фото эко-станции'></img>
-                <h1>{name}</h1>
-                <h2>О проекте</h2>
+                <h1 className='station__h1'>{name}</h1>
+                <h2 className='station__h2'>О проекте</h2>
                 <p>{description}</p>
-                <h2>Где мы находимся</h2>
+                <h2 className='station__h2'>Где мы находимся</h2>
                 <p>{text_location}</p>
-                <h2>Как с нами связаться</h2>
+                <h2 className='station__h2'>Как с нами связаться</h2>
                 <StationContacts contacts={contacts}/>
-                <a href='/'><button type='button' id='return__btn'>Вернуться на карту</button></a>
+                <a href='/'><button type='button' id='return__btn'><p>Вернуться на карту</p></button></a>
             </div>
         )
     }
@@ -25,10 +25,7 @@ class Station extends React.Component{
 
 Station.propTypes = {
     name: PropTypes.string,
-  //  description: PropTypes.string,
-   // picture: PropTypes.object,
-  //  text_location: PropTypes.string,
-   contacts: PropTypes.array
+    contacts: PropTypes.array
 };
 
 export default Station;

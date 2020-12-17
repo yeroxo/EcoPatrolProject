@@ -1,13 +1,5 @@
 #map{
     position: fixed;
     right: 0;
-    left: 300px;
-}
-
-@media (max-width: 800px) {
-    #map{
-    position: fixed;
-    right: 0;
-    left: 150px;
-}
+    left: 20vw;
 }
