@@ -34,6 +34,29 @@ export default class MyMap extends React.Component {
 
     render() {
         const { stations } = this.props;
+        if (stations == null || stations.length == 0 || stations[0].name == null) {
+            return (
+                <div id='map'>
+                    <YMaps>
+                        <Map
+                            instanceRef={this.map}
+                            onBoundsChange={this.getVisibleObjects}
+                            onLoad={ymapsInstance => {
+                                this.ymaps.current = ymapsInstance;
+                            }}
+                            modules={["util.bounds", "templateLayoutFactory", "layout.Image"]}
+                            defaultState={{
+                                center: [55.4, 61.7],
+                                zoom: 9
+                            }}
+                            height="93vh"
+                            width='80vw'
+                        >
+                        </Map>
+                    </YMaps>
+                </div>
+            )
+        }
         return (
             <div id='map'>
                 <YMaps>               
@@ -51,20 +74,18 @@ export default class MyMap extends React.Component {
                         height="93vh"
                         width='80vw'
                     >
-                     <Clusterer>
+                        <Clusterer options={{
+                            preset: 'islands#invertedVioletClusterIcons',
+                            groupByCoordinates: false,
+                        }}>
                         {stations.map(station => 
                         <Placemark geometry={[station.longitude, station.latitude]} 
                                 properties= {{
                                                 hintContent: station.name,
-                                                balloonContent: station.name
+                                                balloonContent: station.name                                               
                                               }}
                                 modules= {['geoObject.addon.balloon', 'geoObject.addon.hint']}
-                                options={{
-                                    iconLayout: 'default#image',
-                                    // iconImageHref: '../images/logo.png',
-                                    iconContentSize: [100,100],
-                                    iconContentOffset: [-10,-10],
-                                }}
+                                options={{preset: 'islands#violetStretchyIcon'}}
                                 />)}
                         </Clusterer>
                     </Map>

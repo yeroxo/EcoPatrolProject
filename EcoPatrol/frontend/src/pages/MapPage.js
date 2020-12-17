@@ -25,6 +25,16 @@ export default class MapPage extends React.Component {
     }
     render() {
         const {stations} = this.state;
+        if (stations == null || stations.length == 0 || stations[0].name == null) {
+            return (
+                <Fragment>
+                    <div className="mapContent">
+                        <SideBlock stations={stations} />
+                        <Map updateData={this.updateData} stations={stations}  />
+                    </div>
+                </Fragment>
+            )
+        }
     return (
         <Fragment>
             <div className="mapContent">
@@ -45,6 +55,11 @@ export default class MapPage extends React.Component {
                     stations: myJson,
                 });
             })
-            .catch(error => alert(error));
+            .catch(error => 
+                console.log(error),
+                this.setState({
+                    stations: null,
+                })
+                );
     }
 }

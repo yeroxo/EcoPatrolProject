@@ -33,7 +33,6 @@
 @media (max-width: 600px) {
   table {
     border: 0;
-    /* width: 100px; */
   }
   table thead {
     display: none;

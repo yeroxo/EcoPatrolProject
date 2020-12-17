@@ -19,12 +19,11 @@ export default class SideBlock extends React.Component {
 
     render(){
         const {stations}=this.props;
-        if(stations.length==0 || stations[0].name==null){
+        if (stations == null || stations.length==0 || stations[0].name==null){
             return (
                 <div id='sideBlock'>
                     <ul className='sideBlock__ul'>
                         <h1 id='sideBlock__h1'>В данной области нет экостанций</h1>
-                       {/* <h3>В данной области нет экостанций</h3> */}
                     </ul>
                 </div>
             )
@@ -32,7 +31,6 @@ export default class SideBlock extends React.Component {
         return (
             <div id='sideBlock'>
                 <ul className='sideBlock__ul'>
-                    {/* <h1 id='sideBlock__h1'>Список экостанций</h1> */}
                     {stations.map(item => (
                         <StationLink id={item.id} name = {item.name} picture = {item.picture}/>                 
                     ))}
