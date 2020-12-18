@@ -1,3 +1,7 @@
+.hidden {
+	display: none;
+}
+
 .Station__block{
     padding: 2vw;
     width: 65vw;
