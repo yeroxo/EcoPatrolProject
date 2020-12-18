@@ -1,5 +1,5 @@
-import React from 'react'
-import './style.css'
+import React from 'react';
+import './style.css';
 import { YMaps, Map, Placemark, Clusterer} from 'react-yandex-maps';
 
 export default class MyMap extends React.Component {
@@ -32,31 +32,36 @@ export default class MyMap extends React.Component {
         }
     };
 
-    render() {
-        const { stations } = this.props;
+    SetStations(props) {
+        const stations = props.stations;
         if (stations == null || stations.length == 0 || stations[0].name == null) {
-            return (
-                <div id='map'>
-                    <YMaps>
-                        <Map
-                            instanceRef={this.map}
-                            onBoundsChange={this.getVisibleObjects}
-                            onLoad={ymapsInstance => {
-                                this.ymaps.current = ymapsInstance;
-                            }}
-                            modules={["util.bounds", "templateLayoutFactory", "layout.Image"]}
-                            defaultState={{
-                                center: [55.4, 61.7],
-                                zoom: 9
-                            }}
-                            height="93vh"
-                            width='80vw'
-                        >
-                        </Map>
-                    </YMaps>
-                </div>
+            return(
+                <Clusterer options={{
+                    preset: 'islands#invertedVioletClusterIcons',
+                    groupByCoordinates: false,
+                }}/>
             )
         }
+        return(
+            <Clusterer options={{
+                preset: 'islands#invertedVioletClusterIcons',
+                groupByCoordinates: false,
+            }}>
+                {stations.map(station =>
+                    <Placemark geometry={[station.longitude, station.latitude]}
+                        properties={{
+                            hintContent: station.name,
+                            balloonContentHeader: station.name
+                        }}
+                        modules={['geoObject.addon.balloon', 'geoObject.addon.hint']}
+                        options={{ preset: 'islands#violetStretchyIcon' }}
+                    />)}
+            </Clusterer>
+        )
+    }
+
+    render() {
+        const { stations } = this.props;
         return (
             <div id='map'>
                 <YMaps>               
@@ -69,25 +74,17 @@ export default class MyMap extends React.Component {
                         modules={["util.bounds", "templateLayoutFactory", "layout.Image"]}
                         defaultState={{
                             center: [55.4, 61.7],
-                            zoom: 9
+                            zoom: 7,
+                            controls: []
+                        }}
+                        options={{
+                            maxZoom: 14,
+                            minZoom: 6
                         }}
                         height="93vh"
                         width='80vw'
                     >
-                        <Clusterer options={{
-                            preset: 'islands#invertedVioletClusterIcons',
-                            groupByCoordinates: false,
-                        }}>
-                        {stations.map(station => 
-                        <Placemark geometry={[station.longitude, station.latitude]} 
-                                properties= {{
-                                                hintContent: station.name,
-                                                balloonContent: station.name                                               
-                                              }}
-                                modules= {['geoObject.addon.balloon', 'geoObject.addon.hint']}
-                                options={{preset: 'islands#violetStretchyIcon'}}
-                                />)}
-                        </Clusterer>
+                        <this.SetStations stations={stations}></this.SetStations>
                     </Map>
                 </YMaps>
             </div>

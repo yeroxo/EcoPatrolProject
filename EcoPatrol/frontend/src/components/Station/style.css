@@ -32,7 +32,7 @@
 }
 
 #return__btn__p{
-    font-family: Manrope-Medium;
+    font-family: Manrope-Bold;
     color:  #282C62;
 }
 
@@ -50,6 +50,11 @@
 .station__h2{
     margin-top: 1.5vh;
     margin-bottom: 0.1vh;
+}
+
+.Station__img{
+    object-fit: cover;
+    max-height: 60vh;
 }
 }
 

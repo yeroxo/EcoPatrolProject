@@ -9,7 +9,7 @@ class Station extends React.Component{
         const { name, description, picture, text_location, contacts } = this.props;
         return (
             <div className='Station__block'>
-                <img className='Station__img' src={picture} alt='Фото эко-станции'></img>
+                <img className='Station__img' src={picture} alt='Фото эко-станции'/>
                 <h1 className='station__h1'>{name}</h1>
                 <h2 className='station__h2'>О проекте</h2>
                 <p>{description}</p>

@@ -21,13 +21,10 @@
 }
 
 #StationLink__p{
-    color:#282C62;
+     font-family: Manrope-Bold;
+    color:#44357e;
     font-size: 90%;
 }
-/* 
-#StationLink__p:hover{
-    text-decoration:underline;
-} */
 
 @media (max-width: 700px) {
     .StationLink__block{
@@ -36,5 +33,15 @@
 
 .nav-link__image{
     display:none;
+}
+#StationLink__p{
+    color:#282C62;
+     font-size: 3.2vw;
+}
+}
+
+@media (max-width: 1024px) {
+.nav-link__image{
+     height: 10vh;
 }
 }

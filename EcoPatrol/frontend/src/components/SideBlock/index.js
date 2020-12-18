@@ -9,7 +9,7 @@ export default class SideBlock extends React.Component {
             return (
                 <div id='sideBlock'>
                     <ul className='sideBlock__ul'>
-                        <h1 id='sideBlock__h1'>В данной области нет экостанций</h1>
+                            <h1 id='sideBlock__h1'>В данной области нет экостанций</h1>              
                     </ul>
                 </div>
             )
