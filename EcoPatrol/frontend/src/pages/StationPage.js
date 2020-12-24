@@ -15,13 +15,13 @@ export default class StationPage extends React.Component {
     render(){
         const { name, description, picture, text_location, contacts } = this.state;
     return (
-        <Station name={name} description={description} picture={picture} text_location={text_location} contacts={contacts}/>
+        <Station wait={400} name={name} description={description} picture={picture} text_location={text_location} contacts={contacts}/>
      )
     }
 
     async componentDidMount() {
         const id = this.props.match.params.id;
-        await fetch(`http://80.87.194.239/api/projects/${id}/`)
+        await fetch(`http://0.0.0.0/api/projects/${id}/`)
             .then(response =>response.json())
             .then((myJson) => {
                 this.setState({ name: myJson.name, 
