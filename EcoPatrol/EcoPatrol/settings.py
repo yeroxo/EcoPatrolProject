@@ -88,9 +88,9 @@ WSGI_APPLICATION = 'EcoPatrol.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.contrib.gis.db.backends.postgis',
-        'NAME': 'hello_django_dev',
-        'USER': 'postgres',
-        'PASSWORD': 'postgres',
+        'NAME': 'eco_patrol_db',
+        'USER': 'admin_user',
+        'PASSWORD': 'admin',
         'HOST': 'db',
         'PORT': '5432',
     }
