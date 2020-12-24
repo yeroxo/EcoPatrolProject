@@ -1,4 +1,4 @@
-version: "3.9"
+version: "3"
 
 services:
   db:
@@ -11,7 +11,7 @@ services:
     #   Для кастомной папки с данными задаем в prod.env
     #     переменную PGDATA=/var/lib/postgres/data/pgdata
     volumes:
-      - /usr/local/var/postgres:/var/lib/postgres/data/pgdata
+      - ./db_data:/var/lib/postgresql/data
     environment:
       - POSTGRES_DB=hello_django_dev
       - POSTGRES_USER=postgres
@@ -25,8 +25,10 @@ services:
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
       - .:/code
+      - photo:/api_locator/photos
     ports:
       - "8000:8000"
+    restart: on-failure
     expose:
       - 8000
     depends_on:
@@ -45,13 +47,14 @@ services:
   nginx:
     image: nginx:latest
     ports:
-      - "80:8080"
+      - "80:80"
     volumes:
       - ./nginx/nginx-proxy.conf:/etc/nginx/conf.d/default.conf:ro
-    restart: always
+    restart: on-failure
     depends_on:
       - api
       - web
 
 volumes:
   node-modules:
+  photo:

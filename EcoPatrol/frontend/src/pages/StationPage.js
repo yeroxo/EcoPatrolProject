@@ -21,7 +21,7 @@ export default class StationPage extends React.Component {
 
     async componentDidMount() {
         const id = this.props.match.params.id;
-        await fetch(`http://0.0.0.0/api/projects/${id}/`)
+        await fetch(`http://80.87.194.239/api/projects/${id}/`)
             .then(response =>response.json())
             .then((myJson) => {
                 this.setState({ name: myJson.name, 
