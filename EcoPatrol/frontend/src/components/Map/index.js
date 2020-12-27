@@ -80,7 +80,7 @@ export default class MyMap extends React.Component {
                         options={{
                             maxZoom: 14,
                             minZoom: 6,
-                             restrictMapArea: [[57, 55], [51.5, 67]]
+                             restrictMapArea: [[58, 54], [50, 68]]
                         }}
                         height="93vh"
                         width='80vw'
