@@ -16,9 +16,13 @@ header{
 }
 
 a{
-    color: #fff;
-    color-adjust: #fff;
     text-decoration: none;
+    color: black;
+}
+
+a:hover{
+    color: #282C62;
+    text-decoration: underline;
 }
 
 .logo-image{
@@ -36,11 +40,10 @@ a{
 }
 
 .modal__a{
-    color: black;
+     color: #282C62;
 }
 
 .modal__a:hover{
-    color: #282C62;
     text-decoration: underline;
 }
 

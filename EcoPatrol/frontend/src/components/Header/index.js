@@ -11,7 +11,19 @@ export default class Header extends React.Component {
                     <a href='/'> 
                         <img className='logo-image' src={require('../images/big-logo.png')}></img>
                     </a>
-                    <a href='https://экологическийпатруль.рф/'>О проекте</a>
+                    <ModalButton title='О проекте' content = {
+                        <div>
+                            <div className='modal-name'><img className='modal-image' src={require('../images/logo.png')}></img>
+                            <h2>О проекте</h2>
+                            </div>
+                            <p>Научно-образовательный общественно-просветительский проект «Экологический патруль» 
+                                направлен на развитие направлений по экологии и охраны окружающей среды, 
+                                сельского хозяйства и лесного дела в системе дополнительного образования детей естественнонаучной направленности.</p>
+                            <p> Узнайте больше на сайте 
+                                <a className='modal__a' href='https://экологическийпатруль.рф/'> федерального проекта "Экопатруль"</a>
+                                </p>
+                        </div>
+                        }/>
                     <ModalButton title='О карте' content = {
                         <div>
                             <div className='modal-name'><img className='modal-image' src={require('../images/logo.png')}></img>

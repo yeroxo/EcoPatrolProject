@@ -23,21 +23,21 @@
 }
 
 .station__h2{
-    margin-top: 4vh;
+    margin-top: 5vh;
     margin-bottom: 1vh;
 }
 
 #return__btn{
-    background-color:#F9BA51;
+    background-color: #8B7ACC;
     border: 1px solid #282C62;
     min-width: 180px;
     min-height: 50px;
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 #return__btn__p{
     font-family: Manrope-Bold;
-    color:  #282C62;
+    color:#282C62;
 }
 
 @media (max-width: 1024px) {
