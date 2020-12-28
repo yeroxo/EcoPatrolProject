@@ -28,6 +28,7 @@ export default class SideBlock extends React.Component {
         return (
             <div id='sideBlock'>
                 <this.SetStations stations={stations}></this.SetStations>
+                <div className='div__niceScroll'></div>
             </div>
         )
     }
