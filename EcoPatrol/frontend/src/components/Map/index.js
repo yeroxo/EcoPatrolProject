@@ -1,6 +1,6 @@
 import React from 'react';
 import './style.css';
-import { YMaps, Map, Placemark, Clusterer} from 'react-yandex-maps';
+import { YMaps, Map, Placemark, Clusterer, Button} from 'react-yandex-maps';
 
 export default class MyMap extends React.Component {
 
@@ -31,6 +31,14 @@ export default class MyMap extends React.Component {
                 this.map.current.getBounds()[1][1]);      
         }
     };
+
+    moveToStartPosition = () =>{
+        if (this.map.current) {
+            this.map.current.setCenter([55.4, 61.7], 7, {
+                checkZoomRange: true
+            })
+        }
+    }
 
     SetStations(props) {
         const stations = props.stations;
@@ -80,11 +88,19 @@ export default class MyMap extends React.Component {
                         options={{
                             maxZoom: 14,
                             minZoom: 6,
-                             restrictMapArea: [[57, 55], [51.5, 67]]
+                             restrictMapArea: [[62, 50], [46, 72]]
                         }}
                         height="93vh"
                         width='80vw'
                     >
+                        <Button
+                            options={{ maxWidth: 128 }}
+                            data={{ content: 'К Челябинску' }}
+                            defaultState={{ 
+                                selectOnClick: false,
+                            }}
+                            onClick={this.moveToStartPosition}
+                        />
                         <this.SetStations stations={stations}></this.SetStations>
                     </Map>
                 </YMaps>
