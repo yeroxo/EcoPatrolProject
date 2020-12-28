@@ -88,7 +88,7 @@ export default class MyMap extends React.Component {
                         options={{
                             maxZoom: 14,
                             minZoom: 6,
-                             restrictMapArea: [[62, 50], [46, 72]]
+//                             restrictMapArea: [[62, 50], [46, 72]]
                         }}
                         height="93vh"
                         width='80vw'
@@ -96,9 +96,9 @@ export default class MyMap extends React.Component {
                         <Button
                             options={{ maxWidth: 128 }}
                             data={{ content: 'К Челябинску' }}
-                            defaultState={{ 
-                                selectOnClick: false,
-                            }}
+//                            defaultState={{
+//                                selectOnClick: false,
+//                            }}
                             onClick={this.moveToStartPosition}
                         />
                         <this.SetStations stations={stations}></this.SetStations>
